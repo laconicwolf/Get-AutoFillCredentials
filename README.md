@@ -6,6 +6,24 @@ When logging into a site, a user can elect to store the credentials in the brows
 
 This tool is a workaround for extracting passwords from systems that use password managers. The LastPass browser plugins by default will authenticate to your vault and unlock it when you open your browser. Additionally, LastPass by default will autofill your credentials that are saved for a site. This tool takes advantage of these default settings to extract credentials.
 
+## Usage
+* Import the script
+```
+PS C:\> . .\Get-AutoFillCredentials.ps1
+```
+* Launch invisble browser to navigate to a list of URLs and extract autofilled usernames/passwords
+```
+PS C:\> Get-AutoFillCredentials -URLFile .\urls.txt
+```
+* Do the same thing, but display a status
+```
+PS C:\> Get-AutoFillCredentials -URLFile .\urls.txt -DisplayStatus
+```
+* Do the same thing, but make the browser visible (useful for troubleshooting)
+```
+PS C:\> Get-AutoFillCredentials -URLFile .\urls.txt -Visible
+```
+
 ## Requirements/Notes
 * This is a POC tool. There may be better ways to do this.
 * This script does not work well on Windows 10. Microsoft disabled certain features of the IE COM object. All successfull testing was performed on Windows 7 against LastPass.
