@@ -59,6 +59,9 @@ Function Parse-Username {
     elseif ($BrowserObject.Document.getElementById('user_name')) {
         $username = $BrowserObject.Document.getElementById('user_name')
     }
+    elseif ($BrowserObject.Document.getElementById('user_login')) {
+        $username = $BrowserObject.Document.getElementById('user_login')
+    }
     elseif ($BrowserObject.Document.getElementById('j_username')) {
         $username = $BrowserObject.Document.getElementById('j_username')
     }
@@ -104,6 +107,9 @@ Function Parse-Password {
     }
     elseif ($BrowserObject.Document.getElementById('j_password')) {
         $password = $BrowserObject.Document.getElementById('j_password')
+    }
+    elseif ($BrowserObject.Document.getElementById('user_password')) {
+        $password = $BrowserObject.Document.getElementById('user_password')
     }
     elseif ($BrowserObject.Document.getElementById('os_password')) {
         $password = $BrowserObject.Document.getElementById('os_password')
